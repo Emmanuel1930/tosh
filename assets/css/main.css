@@ -469,11 +469,11 @@ h6 {
   flex-direction: column;
   text-align: center;
   position: relative;
-  min-height: 85vh;
-  padding-top: 60px;
+  min-height: 50vh;
+  padding-top: 30px;
 }
 .hero h2 {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-size: 48px;
   font-weight: 700;
   color: #f0f0f0; 
@@ -481,18 +481,38 @@ h6 {
 }
 
 .hero h2 span {
-  text-decoration: none; /* Removes underline */
-  color: #ffc107; /* A golden accent to make it stand out */
+  text-decoration: none;
+  color: #ffc107;
 }
 
 .hero p {
   max-width: 80%;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 20px auto;
   font-size: 18px;
   line-height: 1.6; /* Better readability */
   color: #e0e0e0; /* Slightly softer contrast than white */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .hero p {
+    max-width: 90%; /* Allow more width on smaller screens */
+    font-size: 16px; /* Slightly smaller font for better readability */
+    text-align: justify; /* Justify text for cleaner layout */
+  }
+}
+
+/* Smaller Mobile View (Phones) */
+@media (max-width: 480px) {
+  .hero p {
+    max-width: 90%; /* Full width on very small screens */
+    font-size: 14px; /* Adjust text size for small screens */
+    text-align: justify; /* Justify text for a neat layout on phones */
+  }
+}
+
+
 .hero .btn-get-started {
   font-weight: 500;
   font-size: 14px;
@@ -919,8 +939,8 @@ section,
   position: relative;
   background: linear-gradient(
     45deg,
-    rgba(138, 43, 226, 0.5), /* More vivid purple */
-    rgba(45, 70, 94, 0.5)    /* More vivid blue-gray */
+    rgba(138, 43, 226, 0.3),
+    rgba(45, 70, 94, 0.3)    
   );
   background-size: 200% 200%;
   animation: backgroundMove 8s infinite linear;
@@ -932,9 +952,9 @@ section,
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 1;
-  border: 3px solid var(--accent-color); /* Border with accent color for emphasis */
+  border: 3px solid var(--accent-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0.98; /* Slightly less transparent for vivid background */
+  opacity: 1; /* Slightly less transparent for vivid background */
 }
 
 /* Hover Effect */
@@ -961,7 +981,6 @@ section,
     5px 5px 10px rgba(0, 0, 0, 0.2); /* Larger shadow for the bottom layer */
 }
 
-
 /* Text Styling */
 .emp-registration-section .emp-text {
   font-size: 1.3rem;
@@ -976,33 +995,41 @@ section,
   font-weight: bold;
 }
 
-/* Keyframe Animations */
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .emp-registration-section {
+    padding: 50px 20px;
+    max-width: 95%; 
+    margin: 20px auto;
+  }
 
-/* Moving Background Animation */
-@keyframes backgroundMove {
-  0% {
-    background-position: 0% 50%;
+  .emp-registration-section .emp-title {
+    font-size: 2rem; 
+    line-height: 1.2;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+
+  .emp-registration-section .emp-text {
+    font-size: 1rem; /* Adjust text size for readability */
+    line-height: 1.5; /* Adjust line height for better readability */
+    text-align: justify; /* Align text for a clean layout */
   }
 }
 
-/* Text Fade-In */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
+/* Smaller Mobile View (Phones) */
+@media (max-width: 480px) {
+  .emp-registration-section {
+    padding: 40px 15px; /* Further reduce padding for small screens */
+    max-width: 90%;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .emp-registration-section .emp-title {
+    font-size: 1.8rem; /* Further reduce title size */
+  }
+
+  .emp-registration-section .emp-text {
+    font-size: 0.9rem; /* Smaller text size for phones */
   }
 }
-
 
 
 
@@ -1126,19 +1153,38 @@ section,
   color: var(--accent-color);
 }
 
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px; /* Default padding for spacing */
+}
+
 .about h1 {
   color: var(--heading-color);
   font-size: 30px;
+  text-align: left; /* Default alignment */
+  margin-bottom: 20px;
 }
 
 .about p {
   line-height: 1.7;
   color: var(--default-color);
+  margin-bottom: 15px;
 }
 
+.about .section-subtitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: block;
+  color: var(--default-color);
+}
+
+/* Swiper Pagination Adjustments */
 .about .swiper-pagination {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
 }
 
 .about .swiper-pagination .swiper-pagination-bullet {
@@ -1152,12 +1198,48 @@ section,
   opacity: 1;
 }
 
-.about .section-subtitle {
-  font-size: 15px;
-  margin-bottom: 10px;
-  display: block;
-  color: var(--default-color);
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column; 
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .about h1 {
+    font-size: 24px; 
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .about p {
+    font-size: 14px; 
+    line-height: 1.5; 
+    text-align: center; /* Center-align text */
+    margin-bottom: 10px;
+  }
+
+  .about .section-subtitle {
+    font-size: 13px; /* Slightly smaller subtitle */
+    text-align: center;
+  }
+
+  .about .swiper-pagination {
+    bottom: 10px; /* Move pagination closer for smaller screens */
+  }
 }
+/* Default (Desktop and Larger Screens) */
+.img-wrap {
+  display: block; /* Ensure it's visible */
+}
+
+/* Mobile View (Max Width: 768px) */
+@media (max-width: 768px) {
+  .img-wrap {
+    display: none; /* Hide image on mobile */
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # About 2 Section
@@ -1236,27 +1318,168 @@ section,
 
 
 /*--------------------------------------------------------------
-# Services Section
+# POP UP MESSAGE
 --------------------------------------------------------------*/
-.services {
-  padding-top: 60px;
-  padding-bottom: 60px;
+/* General Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Space for smaller screens */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
-.services .services-item .services-icon {
-  color: var(--accent-color);
+/* Modal Content Styling */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%; /* Ensure responsiveness */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  animation: fadeIn 0.6s ease-in-out;
+  position: relative; /* For the close button */
+  overflow: hidden; /* Hide any content that overflows the modal */
+}
+
+/* Close Button Styling */
+.close-btn {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #000;
+  transform: scale(1.2);
+}
+
+/* Typography Enhancements */
+.modal-content h2 {
+  color: #333;
+  font-size: 1.8rem;
   margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #4b0082; /* Adds visual separation */
+  padding-bottom: 10px;
 }
 
-.services .services-item .services-icon i {
-  font-size: 48px;
+.modal-content p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
-.services .services-item h3 {
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--heading-color);
+.modal-content ul {
+  padding-left: 20px;
 }
+
+.modal-content ul li {
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Account Info Styling */
+.modal-content li strong {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+.modal-content p strong {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+/* Links */
+.modal-content a {
+  color: #4b0082;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.modal-content a:hover {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 80%; /* Reduce width slightly for tablet screens */
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .modal-content p,
+  .modal-content ul li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%; /* Further reduce size for mobile screens */
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-content p,
+  .modal-content ul li {
+    font-size: 0.9rem;
+  }
+
+  .modal-content ul {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 10px;
+    max-width: 95%; /* Even more reduced width for very small screens */
+  }
+
+  .modal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-content p,
+  .modal-content ul li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Stats Section

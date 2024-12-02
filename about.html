@@ -359,7 +359,52 @@
     </div>
     <!-- /.container -->
   </div>
-</section><!-- /Team Section -->
+
+ <!-- Popup Notification -->
+ <div id="fraud-alert" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2>FRAUD DISCLAIMER ALERT</h2>
+    <p>
+      Empyrean Humanitarian Foundation is committed to transparency, integrity, and the empowerment of the underprivileged.
+    </p>
+    <p>
+      Beware of fraudulent activities by unauthorized individuals attempting to solicit donations in our name. Donations should only be made through our official bank accounts:
+    </p>
+    <ul>
+      <li><strong>Dollar Account:</strong> 0943488575</li>
+      <li><strong>Pounds Account:</strong> 0943488582</li>
+      <li><strong>Euro Account:</strong> 0943488599</li>
+      <li><strong>Naira Account:</strong> 0943408816</li>
+    </ul>
+    <p><strong>Account Name:</strong> EMPYREAN HUMANITARIAN FND</p>
+    <p><strong>Bank Name:</strong> Guarantee Trust Bank</p>
+    <p><strong>SWIFT Code:</strong> GTBINGLA</p>
+    <p>
+      For inquiries, email us at: <a href="mailto:empyreanhumanitarianfoundtn@gmail.com">empyreanhumanitarianfoundtn@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+<script>
+  // Function to show the popup
+  function showPopup() {
+    const popup = document.getElementById('fraud-alert');
+    popup.style.display = 'block';
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    const popup = document.getElementById('fraud-alert');
+    popup.style.display = 'none';
+  }
+
+  // Show the popup when the page loads
+  window.onload = function() {
+    showPopup();
+  };
+</script>
+
 
   <footer id="footer" class="footer light-background">
     <div class="container">
